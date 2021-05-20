@@ -22,7 +22,7 @@ void setup() {
   isEnding = false;
   numberOfLevels = getLevelCount();
   player = new Player();
-  levelCounter = 3;
+  levelCounter = 0;
   deathCounter = new int[numberOfLevels];
   for (int i = 0; i < deathCounter.length; i++) {
    deathCounter[i] = 0; 

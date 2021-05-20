@@ -193,11 +193,9 @@ class Player {
       if (position.y >= targetGrapple.position.y) {
         if (velocity.x > 0) {
           angle = PVector.angleBetween(cableVector, velocity);
-          System.out.println("clockwise " + velocity.x);
         }
         else {
           angle = PVector.angleBetween(cableVector.copy().mult(-1), velocity);
-          System.out.println("Counter " + velocity.x);
         }
       }
       else {
