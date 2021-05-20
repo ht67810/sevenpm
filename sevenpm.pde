@@ -67,14 +67,14 @@ void draw() {
 void keyPressed() {
  
  if (isIntro) {
-  if (key==ENTER || key==RETURN) {
+  if (key==ENTER || key==RETURN || key == 'x' || key == 'u') {
     isIntro = false;
     initialiseLevel(levelCounter);
     player.position.set(playerStart);
   }
  }
  else if (isTransition) {
-  if (key==ENTER || key==RETURN) {
+  if (key==ENTER || key==RETURN || key == 'x' || key == 'u') {
    levelCounter++;
    isTransition = false;
    goalPhrase = null;
@@ -92,7 +92,7 @@ void keyPressed() {
  }
  
  else if (isEnding) {
-  if (key==ENTER || key==RETURN) {
+  if (key==ENTER || key==RETURN || key == 'x' || key == 'u') {
    isEnding = false;
    setup();
   }
@@ -105,12 +105,24 @@ void keyPressed() {
   player.movingRight = true; 
  }
  
- if (key == ' ') {
+ if (key == ' ' || key == 'w') {
   player.holdingJump = true; 
  }
  
- if (key == 'u') {
+ if (key == 'u' || key=='x') {
   player.holdingGrapple = true; 
+ }
+ 
+ if (key == CODED) {
+  if (keyCode == UP) {
+   player.holdingJump = true; 
+  }
+  if (keyCode == LEFT) {
+   player.movingLeft = true; 
+  }
+  if (keyCode == RIGHT) {
+   player.movingRight = true; 
+  }
  }
 }
 
@@ -123,15 +135,28 @@ void keyReleased() {
   player.movingRight = false; 
  }
  
- if (key == ' ') {
+ if (key == ' ' || key == 'w') {
   player.holdingJump = false; 
   player.releasedJump = true;
  }
  
- if (key == 'u') {
+ if (key == 'u' || key == 'x') {
   player.holdingGrapple = false; 
   player.targetGrapple = null;
   player.grappleChecked = false;
+ }
+ 
+ if (key == CODED) {
+  if (keyCode == UP) {
+    player.holdingJump = false;
+    player.releasedJump = true;
+  }
+  if (keyCode == LEFT) {
+   player.movingLeft = false; 
+  }
+  if (keyCode == RIGHT) {
+   player.movingRight = false; 
+  }
  }
 }
 
@@ -147,4 +172,5 @@ void killPlayer() {
   deathCounter[levelCounter]++;
   player.position.set(playerStart);
   player.velocity.set(initialVelocity);
+  player.targetGrapple = null;
 } 

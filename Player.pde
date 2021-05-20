@@ -150,7 +150,7 @@ class Player {
    if (!jumping && releasedJump) {
      //Coyote Time - You can jump for up to coyoteTimeFrames frames after walking off a ledge
      //Or if you are on the ground
-     if (velocity.y <= gravity*downGravityMultiplier*coyoteTimeFrames) { 
+     if (velocity.y <= gravity*downGravityMultiplier*coyoteTimeFrames && velocity.y >= 0) { 
        velocity.y = -jumpVelocity;
        releasedJump = false;
      }
@@ -174,14 +174,14 @@ class Player {
    if (grapples.size() != 0) {
      if (targetGrapple == null) {
        if (!grappleChecked) {
-         if (grapples.get(0).checkLineOfSight(this)) {
+         if (grapples.get(0).checkLineOfSight(this) && position.y >= grapples.get(0).position.y) {
            targetGrapple = grapples.get(0);
          }
          grappleChecked = true;
        }
      }
      else {
-       if (!targetGrapple.checkLineOfSight(this)) {
+       if (!targetGrapple.checkLineOfSight(this) || position.y < targetGrapple.position.y) {
         targetGrapple = null;
         return;
        }
@@ -249,6 +249,7 @@ class Player {
      doubleJumpUsed = false;
    }
    
+   
    //Collision with right wall
    if (position.x > (1000 - radius)) {
     position.x = (1000 - radius); 
@@ -266,6 +267,11 @@ class Player {
    
    //Velocity Updates
    
+   //Coyote Time Check 2 - To prevent the times when you could triple jump
+   if (jumping == false && velocity.y > gravity*downGravityMultiplier*coyoteTimeFrames) {
+     jumping = true;
+   }
+   
    //If velocity to the right is greater than the maxWalkSpeed, decelerate by accelerating to the left
    if (velocity.x > maxWalkSpeed && targetGrapple == null) {
     velocity.x -= walkDeceleration; 
@@ -275,6 +281,7 @@ class Player {
    if (velocity.x < -maxWalkSpeed && targetGrapple == null) {
     velocity.x += walkDeceleration; 
    }
+   
    
    
    //Value of gravity determines fall speed
@@ -384,8 +391,8 @@ class Player {
  void trampolineCollision() {
    if (trampolines.size() > 0 && trampolineLockout == 0) {
     for (Trampoline trampoline: trampolines) {
-     if (position.dist(trampoline.position) < trampoline.iconWidth) {
-      player.velocity.y = -12; 
+     if (position.dist(trampoline.position) < trampoline.iconWidth/1.5) {
+      velocity.y = -12; 
       trampolineLockout = 50;
      }
     }
