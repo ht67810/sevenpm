@@ -1,0 +1,286 @@
+{
+ "levels": [
+  {
+   "level": 0,
+   "groundPieces": [
+    {
+     "x": 0,
+     "y": 400,
+     "width": 150,
+     "height": 100
+    },
+    {
+     "x": 150,
+     "y": 450,
+     "width": 200,
+     "height": 50
+    },
+    {
+     "x": 350,
+     "y": 400,
+     "width": 150,
+     "height": 100
+    },
+    {
+     "x": 500,
+     "y": 450,
+     "width": 400,
+     "height": 50
+    },
+    {
+     "x": 900,
+     "y": 400,
+     "width": 100,
+     "height": 100
+    }
+   ],
+   "goal": {
+    "x": 950,
+    "y": 250
+   },
+   "spikes": [
+    {
+     "xStart": 160,
+     "xEnd": 335,
+     "y": 437,
+     "rotation": 0
+    },
+    {
+     "xStart": 510,
+     "xEnd": 885,
+     "y": 437,
+     "rotation": 0
+    }
+   ],
+   "playerStart": {
+    "x": 100,
+    "y": 350
+   }
+  },
+  {
+   "level": 1,
+   "playerStart": {
+    "x": 75,
+    "y": 350
+   },
+   "goal": {
+    "x": 950,
+    "y": 250
+   },
+   "groundPieces": [
+    {
+     "x": 0,
+     "y": 400,
+     "width": 100,
+     "height": 100
+    },
+    {
+     "x": 850,
+     "y": 425,
+     "width": 150,
+     "height": 75
+    },
+    {
+     "x": 575,
+     "y": 450,
+     "width": 50,
+     "height": 50
+    }
+   ],
+   "spikes": [
+    {
+     "xStart": 110,
+     "xEnd": 560,
+     "y": 487,
+     "rotation": 0
+    },
+    {
+     "xStart": 635,
+     "xEnd": 835,
+     "y": 487,
+     "rotation": 0
+    }
+   ],
+   "trampolines": [
+    {
+     "x": 600,
+     "y": 440
+    }
+   ]
+  },
+  {
+   "level": 2,
+   "groundPieces": [
+     {
+      "x": 0,
+      "y": 250,
+      "width": 150,
+      "height": 250
+     },
+     {
+      "x": 850,
+      "y": 150,
+      "width": 150,
+      "height": 350
+     },
+     {
+      "x": 150,
+      "y": 400,
+      "width": 150,
+      "height": 100
+     }
+   ],
+   "goal": {
+     "x": 925,
+     "y": 100
+    },
+   "spikes": [
+    {
+     "xStart": 310,
+     "xEnd": 835,
+     "y": 487,
+     "rotation": 0
+    }
+   ],
+   "grapples": [
+    {
+     "x": 500,
+     "y": 200
+    }
+   ],
+   "playerStart": {
+    "x": 100,
+    "y": 50,
+   }
+  },
+  {
+   "level": 3,
+   "groundPieces": [
+    {
+     "x": 0,
+     "y": 150,
+     "width": 100,
+     "height": 350
+    },
+    {
+     "x": 250,
+     "y": 0,
+     "width": 50,
+     "height": 175
+    },
+    {
+     "x": 150,
+     "y": 450,
+     "width": 50,
+     "height": 50
+    },
+    {
+     "x": 250,
+     "y": 295,
+     "width": 50,
+     "height": 205
+    },
+    {
+     "x": 400,
+     "y": 175,
+     "width": 75,
+     "height": 325
+    },
+    {
+     "x": 600,
+     "y": 0,
+     "width": 100,
+     "height": 150
+    },
+    {
+     "x": 600,
+     "y": 300,
+     "width": 100,
+     "height": 200
+    },
+    {
+     "x": 850,
+     "y": 200,
+     "width": 150,
+     "height": 300
+    }
+   ],
+   "playerStart": {
+    "x": 25,
+    "y": 100
+   },
+   "goal": {
+    "x": 925,
+    "y": 100
+   },
+   "spikes": [
+    {
+     "xStart": 113,
+     "xEnd": 138,
+     "y": 487,
+     "rotation": 0
+    },
+    {
+     "xStart": 213,
+     "xEnd": 238,
+     "y": 487,
+     "rotation": 0
+    },
+    {
+     "xStart": 263,
+     "xEnd": 288,
+     "y": 282,
+     "rotation": 0
+    },
+    {
+     "xStart": 263,
+     "xEnd": 288,
+     "y": 188,
+     "rotation": 2
+    },
+    {
+     "xStart": 413,
+     "xEnd": 463,
+     "y": 163,
+     "rotation": 0
+    },
+    {
+     "xStart": 313,
+     "xEnd": 388,
+     "y": 487,
+     "rotation": 0
+    },
+    {
+     "xStart": 488,
+     "xEnd": 588,
+     "y": 487,
+     "rotation": 0
+    },
+    {
+     "xStart": 613,
+     "xEnd": 688,
+     "y": 287,
+     "rotation": 0
+    },
+    {
+     "xStart": 713,
+     "xEnd": 838,
+     "y": 487,
+     "rotation": 0
+    }
+   ],
+   "trampolines": [
+    {
+     "x": 175,
+     "y": 440
+    }
+   ],
+   "grapples": [
+    {
+     "x": 650,
+     "y": 160
+    }
+   ]
+  }
+ ]
+}
