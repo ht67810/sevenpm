@@ -1,0 +1,53 @@
+{
+ "level": {
+  "level": 2,
+  "playerStart": {
+   "x": 75,
+   "y": 350
+  },
+  "goal": {
+   "x": 950,
+   "y": 250
+  },
+  "groundPieces": [
+   {
+    "x": 0,
+    "y": 400,
+    "width": 100,
+    "height": 100
+   },
+   {
+    "x": 850,
+    "y": 425,
+    "width": 150,
+    "height": 75
+   },
+   {
+    "x": 575,
+    "y": 450,
+    "width": 50,
+    "height": 50
+   }
+  ],
+  "spikes": [
+   {
+    "xStart": 113,
+    "xEnd": 563,
+    "y": 487,
+    "rotation": 0
+   },
+   {
+    "xStart": 638,
+    "xEnd": 838,
+    "y": 487,
+    "rotation": 0
+   }
+  ],
+  "trampolines": [
+   {
+    "x": 600,
+    "y": 440
+   }
+  ]
+ }
+}

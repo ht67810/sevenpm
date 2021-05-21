@@ -1,0 +1,201 @@
+{
+ "level": {
+  "level": 7,
+  "goal": {
+   "x": 100,
+   "y": 425
+  },
+  "playerStart": {
+   "x": 100,
+   "y": 125
+  },
+  "groundPieces": [
+   {
+    "x": 0,
+    "y": 225,
+    "width": 200,
+    "height": 75
+   },
+   {
+    "x": 150,
+    "y": 300,
+    "width": 250,
+    "height": 25
+   },
+   {
+    "x": 400,
+    "y": 0,
+    "width": 75,
+    "height": 200
+   },
+   {
+    "x": 300,
+    "y": 175,
+    "width": 100,
+    "height": 25
+   },
+   {
+    "x": 700,
+    "y": 450,
+    "width": 150,
+    "height": 50
+   },
+   {
+    "x": 600,
+    "y": 100,
+    "width": 100,
+    "height": 175
+   },
+   {
+    "x": 950,
+    "y": 475,
+    "width": 50,
+    "height": 25
+   },
+   {
+    "x": 950,
+    "y": 200,
+    "width": 50,
+    "height": 25
+   },
+   {
+    "x": 700,
+    "y": 150,
+    "width": 50,
+    "height": 75
+   },
+   {
+    "x": 750,
+    "y": 125,
+    "width": 25,
+    "height": 150
+   }
+  ],
+  "spikes": [
+   {
+    "xStart": 313,
+    "xEnd": 388,
+    "y": 163,
+    "rotation": 0
+   },
+   {
+    "x": 388,
+    "yStart": 13,
+    "yEnd": 138,
+    "rotation": 3
+   },
+   {
+    "xStart": 288,
+    "xEnd": 288,
+    "y": 188,
+    "rotation": 3
+   },
+   {
+    "x": 213,
+    "yStart": 263,
+    "yEnd": 288,
+    "rotation": 1
+   },
+   {
+    "xStart": 163, 
+    "xEnd": 388,
+    "y": 338,
+    "rotation": 2
+   },
+   {
+    "xStart": 13,
+    "xEnd": 688,
+    "y": 488,
+    "rotation": 0
+   },
+   {
+    "xStart": 613,
+    "xEnd": 688,
+    "y": 288,
+    "rotation": 2
+   },
+   {
+    "xStart": 713,
+    "xEnd": 738,
+    "y": 238,
+    "rotation": 2
+   },
+   {
+    "xStart": 763,
+    "xEnd": 763,
+    "y": 288,
+    "rotation": 2
+   },
+   {
+    "x": 788,
+    "yStart": 138,
+    "yEnd": 263,
+    "rotation": 1
+   },
+   {
+    "xStart": 763,
+    "xEnd": 763,
+    "y": 113,
+    "rotation": 0
+   },
+   {
+    "xStart": 413,
+    "xEnd": 463,
+    "y": 213,
+    "rotation": 2
+   },
+   {
+    "xStart": 963,
+    "xEnd": 988,
+    "y": 238,
+    "rotation": 2
+   },
+   {
+    "xStart": 863,
+    "xEnd": 938,
+    "y": 488,
+    "rotation": 0
+   }
+  ],
+  "grapples": [
+   {
+    "x": 410,
+    "y": 325
+   }
+  ],
+  "crumbles": {
+   "blocks": [
+    {
+     "x": 375,
+     "y": 325,
+     "width": 25,
+     "height": 175
+    }
+   ],
+   "keys": [
+    {
+     "x": 350,
+     "y": 125
+    },
+    {
+     "x": 625,
+     "y": 75
+    }
+   ]
+  },
+  "weight": {
+   "x": 100,
+   "y": 75
+  },
+  "trampolines": [
+   {
+    "x": 975,
+    "y": 465
+   },
+   {
+    "x": 975,
+    "y": 190
+   }
+  ]
+ } 
+}

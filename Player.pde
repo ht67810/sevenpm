@@ -30,7 +30,7 @@ class Player {
   final float downGravityMultiplier = 2;
   
   //Amount extra gravity added when carrying a weight
-  final float weightModifier = 0.5;
+  final float weightModifier = 0.8;
   
   //Number of frames after walking off an edge the player can jump for
   final int coyoteTimeFrames = 6;
@@ -151,7 +151,12 @@ class Player {
      //Coyote Time - You can jump for up to coyoteTimeFrames frames after walking off a ledge
      //Or if you are on the ground
      if (velocity.y <= gravity*downGravityMultiplier*coyoteTimeFrames && velocity.y >= 0) { 
-       velocity.y = -jumpVelocity;
+       if (hasWeight) {
+        velocity.y = -(jumpVelocity+1); 
+       }
+       else {
+         velocity.y = -jumpVelocity;
+       }
        releasedJump = false;
      }
      jumping = true;
@@ -160,7 +165,12 @@ class Player {
    else {
     //Mid-air Boost Jump
     if (releasedJump && !doubleJumpUsed) {
-      velocity.y = -boostVelocity;
+      if (hasWeight) {
+       velocity.y = -(boostVelocity+1); 
+      }
+      else {
+        velocity.y = -boostVelocity;
+      }
       doubleJumpUsed = true;
       releasedJump = false;
     }
@@ -264,6 +274,8 @@ class Player {
    goalCollision();
    spikeCollision();
    trampolineCollision();
+   crumbleKeyCollision();
+   weightCollision();
    
    //Velocity Updates
    
@@ -392,16 +404,60 @@ class Player {
    if (trampolines.size() > 0 && trampolineLockout == 0) {
     for (Trampoline trampoline: trampolines) {
      if (position.dist(trampoline.position) < trampoline.iconWidth/1.5) {
-      velocity.y = -12; 
-      trampolineLockout = 50;
+       if (hasWeight) {
+        velocity.y = -13; 
+       }
+       else {
+         velocity.y = -12;
+       }
+       trampolineLockout = 25;
      }
     }
    }
  }
  
+ void crumbleKeyCollision() {
+  if (crumbleKeys.size() > 0) {
+   CrumbleKey collidedKey = null; 
+   for (CrumbleKey k: crumbleKeys) {
+    if (position.dist(k.position) < k.radius*2) {
+     collidedKey = k;
+    }
+   }
+   
+   if (collidedKey == null) {
+    return; 
+   }
+   
+   crumbleKeys.remove(collidedKey);
+   //All keys have been collected
+   if (crumbleKeys.size() == 0) {
+     //Delete all the crumble blocks
+     for (int i = groundPieces.size()-1; i >= 0; i--) {
+      if (groundPieces.get(i) instanceof CrumbleBlock) {
+       groundPieces.remove(i); 
+      }
+     }
+   }
+   
+  }
+ }
+ 
+ void weightCollision() {
+  if (weight != null) {
+   if (position.dist(weight.position) < weight.iconWidth) {
+    player.hasWeight = true;
+    weight = null;
+   }
+  }
+ }
  
  void draw() {
-   fill(red, green, blue);
+   float redModifier = 1;
+   if (hasWeight) {
+    redModifier = 2.5; 
+   }
+   fill(red*redModifier, green, blue);
    ellipse(position.x, position.y, radius*2, radius*2);
    if (targetGrapple != null) {
      fill(0);

@@ -1,0 +1,115 @@
+{
+ "level": {
+  "level": 6,
+  "playerStart": {
+   "x": 50,
+   "y": 350
+  },
+  "goal": {
+   "x": 925,
+   "y": 400
+  },
+  "groundPieces": [
+   {
+    "x": 0,
+    "y": 400,
+    "width": 100,
+    "height": 100
+   },
+   {
+    "x": 100,
+    "y": 100,
+    "width": 50,
+    "height": 25
+   },
+   {
+    "x": 500,
+    "y": 300,
+    "width": 50,
+    "height": 25
+   },
+   {
+    "x": 800,
+    "y": 250,
+    "width": 200,
+    "height": 50
+   },
+   {
+    "x": 800,
+    "y": 400,
+    "width": 50,
+    "height": 100
+   }
+  ],
+  "spikes": [
+   {
+    "xStart": 113,
+    "xEnd": 788,
+    "y": 488,
+    "rotation": 0
+   },
+   {
+    "x": 788,
+    "yStart": 413,
+    "yEnd": 463,
+    "rotation": 3
+   },
+   {
+    "x": 788,
+    "yStart": 263,
+    "yEnd": 288,
+    "rotation": 3
+   },
+   {
+    "xStart": 813,
+    "xEnd": 988,
+    "y": 238,
+    "rotation": 0
+   },
+   {
+    "xStart": 813,
+    "xEnd": 838,
+    "y": 388,
+    "rotation": 0
+   }
+  ],
+  "crumbles": {
+   "blocks": [
+    {
+     "x": 800,
+     "y": 300,
+     "width": 50,
+     "height": 100
+    },
+    {
+     "x": 300,
+     "y": 200,
+     "width": 50,
+     "height": 25
+    },
+    {
+     "x": 300,
+     "y": 350,
+     "width": 50,
+     "height": 25
+    }
+   ],
+   "keys": [
+    {
+     "x": 125,
+     "y": 75
+    }
+   ]
+  },
+  "grapples": [
+   {
+    "x": 700,
+    "y": 50
+   }
+  ],
+  "weight": {
+   "x": 50,
+   "y": 300
+  }
+ }
+}

@@ -15,16 +15,16 @@ void drawIntro() {
   text("It's 7pm, and Customer Number 93 (you) wants to get some burgers", 100, 200);
   text("Use A and D to move left and right, SPACE/w to jump, and U to grapple onto grapple points", 100, 250);
   text("Or you can use the LEFT and RIGHT arrow keys to move, UP to jump and X to grapple", 100, 280);
-  text("Avoid spikes and such", 100, 310);
+  text("Avoid spikes and such, and collect the weights if you fancy an extra challenge", 100, 310);
   text("Press U or X to start", 100, 340);
   //Small font
   textSize(12);
   text("(hungry)", 740, 220);
-  text("(this)", 865, 310);
+  text("(this)", 865, 225);
   
-  ellipse(850, 310, 10, 10);
+  ellipse(850, 225, 10, 10);
   fill(backgroundColour);
-  ellipse(850, 310, 8, 8);
+  ellipse(850, 225, 8, 8);
   fill(0);
 }
 
@@ -46,7 +46,10 @@ void drawTransition() {
     flavourText = "Nice job";
   }
   text("You died " + deathCount + " times before beating that level. \n" + flavourText, 150, 150);
-  text("Press U or X to continue", 150, 210);
+  if (player.hasWeight) {
+    text("You also collected a weight, which helped offset the calories you got from the burger.", 150, 210);
+  }
+  text("Press U or X to continue", 150, 240);
   
   //Small font
   textSize(12);
@@ -69,6 +72,9 @@ void drawEnding() {
   else {
    text("Yummy burger", 100, 160); 
   }
-  text("Press U or X to retry", 100, 210);
+  if (weightCounter > 0) {
+   text("You also collected " + weightCounter + " weights, meaning you are now swole.", 100, 190); 
+  }
+  text("Press U or X to play again", 100, 220);
   
 }

@@ -7,6 +7,7 @@ final PVector initialVelocity = new PVector(0, 0);
 
 int levelCounter;
 int[] deathCounter;
+int weightCounter;
 
 //If the intro should be shown
 boolean isIntro = true;
@@ -23,6 +24,7 @@ void setup() {
   numberOfLevels = getLevelCount();
   player = new Player();
   levelCounter = 0;
+  weightCounter = 0;
   deathCounter = new int[numberOfLevels];
   for (int i = 0; i < deathCounter.length; i++) {
    deathCounter[i] = 0; 
@@ -59,6 +61,14 @@ void draw() {
    for (Trampoline trampoline: trampolines) {
     trampoline.draw(); 
    }
+   
+   for (CrumbleKey k: crumbleKeys) {
+    k.draw(); 
+   }
+   
+   if (weight!=null) {
+    weight.draw(); 
+   }
    player.draw();
    goal.draw();
  }
@@ -86,6 +96,7 @@ void keyPressed() {
   else {
    initialiseLevel(levelCounter);
    player.position.set(playerStart);
+   player.hasWeight = false;
   }
    
   }
@@ -164,8 +175,12 @@ void beatLevel() {
  isTransition = true;
  
  //Prevents accidentally reactivating the goal on multiple frames
- player.position.set(0, 0);
+ player.position.set(-100, 0);
  player.velocity.set(initialVelocity);
+ 
+ if (player.hasWeight) {
+  weightCounter++; 
+ }
 }
 
 void killPlayer() {
@@ -173,4 +188,7 @@ void killPlayer() {
   player.position.set(playerStart);
   player.velocity.set(initialVelocity);
   player.targetGrapple = null;
+  player.jumping = false;
+  player.hasWeight = false;
+  resetLevel();
 } 
