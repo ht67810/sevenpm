@@ -168,10 +168,17 @@ public void resetLevel() {
   }
 }
 
-//Returns the number of files in the data folder - 2
+//Returns the number of files in the data folder - 3
 //Because there are 3 non-level files in there
 public int getLevelCount() {
   File file = new File(dataPath(""));
   String[] listPath = file.list();
-  return listPath.length-3;
+  int levelCount = 0;
+  for (String s: listPath) {
+    if (s.substring(s.length()-5).equals(".json")) {
+      levelCount++;
+    }
+  }
+  System.out.println(levelCount);
+  return levelCount;
 }
