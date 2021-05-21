@@ -179,6 +179,5 @@ public int getLevelCount() {
       levelCount++;
     }
   }
-  System.out.println(levelCount);
   return levelCount;
 }
